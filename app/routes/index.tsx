@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory';
 import Counter from '../islands/counter';
+import Component from '../islands/component';
 
 export const POST = createRoute(async c => {
 	const { name } = await c.req.parseBody<{ name: string }>();
@@ -16,6 +17,7 @@ export default createRoute(c => {
 				<input type='text' name='name' placeholder='name' />
 				<input type='submit' />
 			</form>
+			<Component />
 		</>,
 	);
 });
